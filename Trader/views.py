@@ -7,10 +7,12 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import io 
 import base64
+from .models import Record
 
 # Create your views here.
 def home(request):
     search_query = request.GET.get('search_query', 'BTC-USD')
+    records = Record.objects.all()
 
     data = yf.download(search_query, "2017-01-01") 
     try:
@@ -36,4 +38,4 @@ def home(request):
     except:
         data_uri = None
 
-    return render(request, 'index.html', {'data_uri': data_uri})
+    return render(request, 'index.html', {'data_uri': data_uri, 'records' : records})
