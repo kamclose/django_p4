@@ -12,3 +12,9 @@ header {
 header h1{
     left: 50;
 }
+h1 {
+    margin: 0;
+}
+.logout {
+    float: right;
+}
