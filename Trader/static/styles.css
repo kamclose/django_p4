@@ -18,3 +18,8 @@ h1 {
 .logout {
     float: right;
 }
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
