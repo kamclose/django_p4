@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paper Trader</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Paper Trader</h1>
+        <div class="logout">
+            <span>Welcome, Username</span>
+            <a href="#">Logout</a>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="half">
+            <h2>First Half</h2>
+            <div>
+                <form action="{% url 'paper_trader' %}" method="GET">
+                    <input type="text" name="search_query" placeholder="Enter search query">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <img src="data:image/png;base64,{{ data_uri }}" alt="My Chart">
+        </div>
+        <div class="half">
+            <h2>Second Half</h2>
+            <p>Content of the second half goes here...</p>
+        </div>
+    </div>
+</body>
+</html>
